@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+
+<!-- Product section-->
+        <section class="py-2">
+            <div class="container px-4 px-lg-5 my-3">
+                <div class="row gx-4 gx-lg-5 align-items-center">
+                    <div class="col-md-4"><img
+                            class="card-img-top mb-5 mb-md-0" src="{{ product.image.url }}" /></div>
+                    <div class="col-md-6">
+                        <h1 class="display-5 fw-bolder">{{ product.title }}</h1>
+                        <div class="fs-5 mb-5">
+                            <span>Цена: {{ product.price }} руб.</span>
+                        </div>
+                        <p class="lead">{{ product.description }}</p>
+                        <div class="d-flex">
+                            {% block add_to_cart %}
+                            {% if user.is_authenticated %}
+                            <div class="text-center">
+                                {% if product.category.slug == "notebooks" %}
+                                    <a class="btn btn-outline-dark mt-auto" aria-current="page"
+                                       href="{% url 'add_to_cart_notebook' slug=product.slug %}">Add to cart</a>
+                                {% else %}
+                                    <a class="btn btn-outline-dark mt-auto" aria-current="page"
+                                       href="{% url 'add_to_cart_smartphone' slug=product.slug %}">Add to cart</a>
+                                {% endif %}
+                            </div>
+                            {% endif %}
+                            {% endblock add_to_cart %}
+                        </div>
+                    </div>
+                    <p class="mt-4">Характеристики:</p>
+                    {% if product.category.slug == "notebooks" %}
+                        {% include "notebook_spec.html" %}
+                    {% else %}
+                        {% include "smartphone_spec.html" %}
+                    {% endif %}
+                </div>
+            </div>
+        </section>
+
+
+{% endblock content %}

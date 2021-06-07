@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Cool Look Gadget</title>
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+        <!-- Core theme CSS (includes Bootstrap)-->
+<!--        <link href="css/styles.css" rel="stylesheet" />-->
+    </head>
+    <body>
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container px-4 px-lg-5">
+                <div class="text-center">
+                    <a class="btn btn-outline-dark mt-auto" aria-current="page" href="{% url 'base' %}">Home</a>
+                </div>
+
+                {% block login %}
+                <div class="text-center">
+                    {% if user.is_authenticated %}
+                        <span>{{ user.get_username }}</span> <a class="btn btn-outline-dark mt-auto" aria-current="page"
+                           href="{% url 'logout' %}?next={{ request.path }}">Logout</a>
+                    {% else %}
+                        <a class="btn btn-outline-dark mt-auto" href="{% url 'login' %}?next={{ request.path }}">Login</a>
+                    {% endif %}
+                </div>
+                {% endblock login %}
+
+                {% if perms.shop.add_product %}
+                <form class="d-flex">
+                    <div class="text-center">
+                        <a class="btn btn-outline-dark mt-auto" aria-current="page" href="{% url 'cart' %}">Cart</a>
+                    </div>
+                </form>
+                {% endif %}
+
+            </div>
+        </nav>
+
+        {% block content %}
+        <!-- Header-->
+        <header class="bg-dark py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">Cool Look Gadget</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">Твоя жизнь! Твой стиль!</p>
+                </div>
+            </div>
+        </header>
+        <!-- Section-->
+        <section class="py-5">
+            <div class="container px-4 px-lg-5 mt-5">
+                <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
+
+                    {% for product in products %}
+                    <div class="col mb-5">
+                        <div class="card h-100">
+                            <!-- Product image-->
+                            <a href="{{ product.get_absolute_url }}"><img class="card-img-top" src="{{ product.image.url }}" alt=""></a>
+                            <!-- Product details-->
+                            <div class="card-body p-4">
+                                <div class="text-center">
+                                    <!-- Product name-->
+                                    <a href="{{ product.get_absolute_url }}">{{ product.title }}</a>
+                                    <!-- Product price-->
+                                    <h5>{{ product.price }} руб.</h5>
+                                </div>
+                            </div>
+                            <!-- Product actions-->
+
+                            {% block add_to_cart %}
+                            {% if user.is_authenticated %}
+                                <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                    <div class="text-center">
+                                        {% if product.category.slug == "notebooks" %}
+                                            <a class="btn btn-outline-dark mt-auto"
+                                                href="{% url 'add_to_cart_notebook' slug=product.slug %}">Add to cart</a></div>
+                                        {% else %}
+                                            <a class="btn btn-outline-dark mt-auto"
+                                                href="{% url 'add_to_cart_smartphone' slug=product.slug %}">Add to cart</a></div>
+                                        {% endif %}
+                                </div>
+                            {% endif %}
+                            {% endblock add_to_cart %}
+
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+        {% endblock content %}
+
+        <!-- Footer-->
+        <footer class="py-5 bg-dark">
+            <div class="container"><p class="m-0 text-center text-white">Copyright &copy; Your Website 2021</p></div>
+        </footer>
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <!-- Core theme JS-->
+<!--        <script src="js/scripts.js"></script>-->
+    </body>
+</html>
