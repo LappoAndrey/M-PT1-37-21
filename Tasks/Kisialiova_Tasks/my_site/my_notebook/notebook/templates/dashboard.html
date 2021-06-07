@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include 'include/css.html' %}
+{% block extra_css %} {% endblock %}
+
+<body class="">
+  <div class="wrapper ">
+    {% include 'include/navbar.html' %}
+    <div class="main-panel">
+
+      <nav class="navbar navbar-expand-lg navbar-absolute fixed-top navbar-transparent">
+        <div class="container-fluid">
+          <div class="navbar-wrapper">
+            <a class="navbar-brand" href="{{ request.path }}">{{ page_title }}</a>
+          </div>
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav mr-auto">
+                {% if user.is_authenticated %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+                {% endif %}
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+       {% block content %}
+
+       {% endblock %}
+
+        {% if messages  %}
+           <div class="modal" tabindex="-1" role="dialog" id="messageModal">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Message</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul class="message">
+                        {% for message in messages %}
+                            <li {% if message.tags %} class="{{ message.tags }}" {% endif %}>
+                                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}Important: {% endif %}
+                                 {{ message }}
+                            </li>
+                        {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        {% endif %}
+            <footer class="footer footer-black  footer-white ">
+        <div class="container-fluid">
+          <div class="row">
+            <nav class="footer-nav">
+              <ul>
+                <li>
+                  <a href="https://www.instagram.com/maschenka_k/" target="_blank">Maria Kisialiova</a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/maschenka_k/" target="_blank">Blog</a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/maschenka_k/" target="_blank">Licenses</a>
+                </li>
+              </ul>
+            </nav>
+            <div class="credits ml-auto">
+              <span class="copyright">
+                ©
+                <script>
+                  document.write(new Date().getFullYear())
+                </script>, made with <i class="fa fa-heart heart"></i> by Maria Kisialiova
+              </span>
+            </div>
+          </div>
+        </div>
+      </footer>
+        </div>
+
+    </div>
+  {% include 'include/js.html' %}
+  {% block extra_js %} {% endblock %}
+</body>
+
+</html>

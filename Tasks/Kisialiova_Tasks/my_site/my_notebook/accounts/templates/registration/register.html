@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    {% include 'include/css.html' %}
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+</head>
+<body class="text-center">
+    <form method="post" action="">
+      {% csrf_token %}
+      <div class="form-group">
+        <label>Username</label>
+        <input class="form-control" name="username" placeholder="Enter username">
+      </div>
+	  <div class="form-group">
+        <label>email</label>
+        <input class="form-control" name="email" placeholder="Enter email">
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password1" class="form-control" placeholder="Password">
+      </div>
+	  <div class="form-group">
+        <label>Repeat password</label>
+        <input type="password" name="password2" class="form-control" placeholder="Password again">
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+{% include 'include/js.html' %}
+</body>
+</html>
