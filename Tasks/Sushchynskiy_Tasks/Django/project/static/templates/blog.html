@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Blog Page
+{% endblock %}
+
+{% block content %}
+    <h1>Blog</h1>
+
+    {% if latest_articles %}
+        {% for a in latest_articles %}
+            <ul>
+                <li><a href='{% url "detail" a.id %}'>{{a.title}}</a></li>
+            </ul>
+        {% endfor %}
+    (% else %)
+        <p>Статей пока нет.</p>
+    {% endif %}
+
+{% endblock %}

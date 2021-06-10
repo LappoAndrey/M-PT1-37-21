@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ article.title }}
+{% endblock %}
+
+{% block content %}
+    <h1>{{ article.title }}</h1>
+    <p>{{ article.content }}</p>
+    {% if article.image %}
+        <img src="{{ article.image.url }}"></img>
+    {% endif %}
+    <p><em>{{ article.data }}</em></p>
+    <p><u>{{ article.author }}</u></p>
+    <hr>
+
+    {% if latest_comments %}
+        {% for c in latest_comments %}
+            <p><strong>{{ c.author_name }}</strong></p>
+            <p><em>{{ c.comment_text }}</em></p>
+        {% endfor %}
+    {% else %}
+        <p>There is no comments. You can start!</p>
+    {% endif %}
+
+    {% if latest_articles %}
+        {% for a in latest_articles %}
+            <a href='{% url "detail" a.id %}'>{{ a.title }}</a>
+        {% endfor %}
+    {% endif %}
+    <hr>
+    <form action="{% url 'leave_comment' article.id %}" method="POST">
+        {% csrf_token %}
+        <p class="for_text"><input type="text" required placeholder="Your name" name="comment_name"><br></p>
+        <p><textarea cols="50" rows="5" required placeholder="Your comment" name="comment_text"></textarea></p>
+    <button type="submit">Leave comment</button> 
+    </form>
+    
+
+{% endblock %}

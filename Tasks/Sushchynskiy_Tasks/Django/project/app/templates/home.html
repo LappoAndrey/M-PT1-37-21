@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+The News
+{% endblock %}
+
+{% block content %}
+<h2 class="style_for_main_title">First experience making site with Django!</h2>
+<p class="text_home_page">Hello everybody! I'm a biginner in studying IT technologies and particularly in Django.</p>
+<p class="text_home_page">This is my first site, so take a look and please show condescension. Of course, I try my best!</p>
+<img class="style_img" src="{% static 'app/django.png' %}"></img>
+{% endblock %}

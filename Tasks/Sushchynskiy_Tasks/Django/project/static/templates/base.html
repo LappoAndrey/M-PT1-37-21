@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bad+Script&display=swap" rel="stylesheet">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  <div>
+    <h1 class="logo_text"><a href="{% url 'home' %}"><img class="logo" src="{% static 'app/TN.png' %}">The News</a></h1>
+    <p class="padding_subtitle">
+      <a href="{% url 'blog' %}">Blog</a> |
+      <a href="{% url 'create_theme' %}">Create theme</a>
+    </p>
+  <hr>
+  </div>
+  <div>
+    {% block content %}{% endblock %}
+  </div>
+  <hr class="end">
+  <div>
+    <p>Created with Django&#169;</p>
+  </div>
+</body>
+</html>
