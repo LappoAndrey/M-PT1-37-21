@@ -1,0 +1,280 @@
+
+.avtorbutton {
+position: absolute;
+width: 426px;
+height: 108px;
+left: 840px;
+top: 394px;
+
+background: #FFFFFF;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 14px 1px rgba(0, 0, 0, 0.04);
+border-radius: 6px;}
+.avtorbutton:hover
+{
+    background: #F5F9FF;
+border-color: #1565D8;
+    
+}
+
+label.avtor {
+    position: absolute;
+    width: 104px;
+    height: 19px;
+    left: 948px;
+    top: 438px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+    
+}
+
+.regbutton {
+position: absolute;
+width: 426px;
+height: 108px;
+left: 840px;
+top: 530px;
+
+background: #FFFFFF;
+box-shadow: 0px 2px 14px 1px rgba(0, 0, 0, 0.06);
+border-radius: 6px;
+}
+
+.regbutton:hover {
+background: #F5F9FF;
+border-color: #1565D8;
+    
+}
+
+
+label.reg {
+    position: absolute;
+    width: 103px;
+    height: 19px;
+    left: 948px;
+    top: 574px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+}
+
+.AvtorizVector{
+
+    position: fixed;
+width: 26px;
+height: 26px;
+left: 881px;
+top: 437px;
+
+box-sizing: border-box;
+}
+
+.AvtorizPoligon
+{
+    position: fixed;
+    width: 52px;
+    height: 52px;
+    left: 868px;
+    top: 422px;
+    
+}
+
+.logoTextFarma
+{
+    position: absolute;
+width: 158px;
+height: 50px;
+left: 102px;
+top: 29px;
+
+}
+
+.ImgfarmaLogo
+{
+    position: absolute;
+width: 175.77px;
+height: 249.75px;
+left: 14px;
+top: 17px;
+}
+
+.oformlenie
+{
+    position: absolute;
+width: 666px;
+height: 1024px;
+left: 0px;
+top: 0px;
+/*background: linear-gradient(0deg, rgba(21, 101, 216, 0.9), rgba(21, 101, 216, 0.9)),*/
+background: url('../Image/Index/wdq.jpg');
+}
+
+.TextOform
+{
+    position: absolute;
+width: 473px;
+height: 342px;
+left: 82px;
+top: 300px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: normal;
+font-size: 20px;
+line-height: 38px;
+/* or 190% */
+
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+
+.vectorOfor
+{
+position: absolute;
+width: 33.5px;
+height: 33px;
+left: 560.5px;
+top: 625px;
+}
+
+.tochkaOform
+{
+    position: absolute;
+width: 25px;
+height: 23px;
+left: 82px;
+top: 267px;
+}
+
+h1.textGo
+{
+    position: absolute;
+    width: 375px;
+    height: 36px;
+    left: 880px;
+    top: 330px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    
+    color: #000000;
+}
+
+
+.RegPoligon
+{
+    position: fixed;
+width: 52px;
+height: 52px;
+left: 868px;
+top: 558px;
+}
+
+.RegPen
+{
+    position: fixed;
+width: 26px;
+height: 21px;
+left: 881px;
+top: 575px;
+}
+.TextOformL
+{
+    position: absolute;
+width: 115px;
+height: 22px;
+left: 82px;
+top: 621px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 18px;
+line-height: 22px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+
+color: #FFFFFF;
+}
+.oformCheck
+{
+    position: absolute;
+width: 16px;
+height: 16px;
+left: 200px;
+top: 641px;
+}
+.strelka
+{
+    position: fixed;
+width: 20px;
+height: 20px;
+left: 1213px;
+top: 438px;
+
+}
+
+h1.textSite{
+    position: absolute;
+width: 282px;
+height: 28px;
+left: 1059px;
+top: 70px;
+
+font-family: Inter;
+font-style: italic;
+font-weight: normal;
+font-size: 18px;
+line-height: 28px;
+/* identical to box height, or 156% */
+
+display: flex;
+align-items: center;
+text-align: right;
+
+color: #8692A6;
+}
+
+a.location
+{    position: absolute;
+    width: 282px;
+    height: 28px;
+    left: 1145px;
+    top: 87px;
+}
+a {
+    color: #1565D8;
+    background-color: transparent;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #1565D8;
+    background-color: transparent;
+    text-decoration: underline;
+  }

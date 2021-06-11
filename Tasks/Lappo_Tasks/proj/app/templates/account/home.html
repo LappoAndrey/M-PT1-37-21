@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.1 user-scalable=no" >
+
+	<!-- CSS only -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+	<title>ЗАО ФАРМАСЕРВИС</title>
+
+</head>
+<body style="background:url('{% static  '/image/reg_aut/BG.png' %}')no-repeat center center fixed;
+
+background-size: cover;">
+
+
+	<div class="container-fluid pt-5 " align="center" style="margin-bottom:auto; margin-top:200px ">
+		<div class="col" style="padding:20px;">
+            <img src="{% static 'image/reg_aut/Logo 1.png'%}" alt="" style="width: 150px;">
+		</div>
+		<div class="col"  style="padding:5px;">
+			<a href="{% url 'authorization' %}" type="button" class="btn btn-light" style="
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 16px;
+			text-align: center;
+			text-transform: uppercase;color: #2148C0;
+			filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); width: 40%;min-width: 150px; ">
+			АВТОРИЗАЦИЯ</a>
+		</div>
+		<div class="col"  style="padding:5px;">
+			<a href="{% url 'registration' %}" type="button" class="btn btn-light " style="
+			font-family: Montserrat;
+			font-style: normal;
+			font-weight: 600;
+			font-size: 16px;
+			text-align: center;
+			text-transform: uppercase;color: #2148C0;
+			filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); width: 40%; min-width: 150px; ">
+			РЕГИСТРАЦИЯ
+		</a>
+		</div>
+	</div>
+ <script>window.addEventListener("mousewheel", function(e) {
+    if (e.ctrlKey) {
+      e.preventDefault();
+      return false;
+    }
+  });</script>
+</body>
+</html>

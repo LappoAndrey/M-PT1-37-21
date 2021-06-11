@@ -1,0 +1,638 @@
+/* Контекст для таблицы -----------------*/
+body {
+    margin:0px;
+    font-family:"Open Sans",sans-serif;
+  }
+  #context-menu {
+    position:fixed;
+    z-index:10000;
+    width:150px;
+    background:#1b1a1a;
+    border-radius:5px;
+    transform:scale(0);
+    transform-origin:top left;
+  }
+  #context-menu.active {
+    transform:scale(1);
+    transition:transform 300ms ease-in-out;
+  }
+  #context-menu .item {
+    padding:8px 10px;
+    font-size:15px;
+    color:#eee;
+  }
+  #context-menu .item:hover {
+    background:#555;
+  }
+  #context-menu .item i {
+    display:inline-block;
+    margin-right:5px;
+  }
+  #context-menu hr {
+    margin:2px 0px;
+    border-color:#555;
+  }
+ 
+/* ----------------------------------------------------- */
+
+/* Меню ----------------------------------------------------------------------- */
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #BAC6F2;
+  font-family: Arial;
+  width: 100%;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: rgb(174, 226, 144);
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute; 
+   min-width: 160px;
+  background-color: #f9f9f9;
+
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+  
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ------------------------------------------------------------------- */
+
+/* <!-- сss для прелод --> */
+body {
+  margin: 0;
+}
+
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #e0e0e0;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+
+.loaded .preloader {
+  display: none;
+}
+
+/* <!-- сss для прелод --> *//* ------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------------------------------ */
+/* menuButton --------------------------------------------------------------------------------------*/
+.navbarButton
+{
+
+  width: 100%;
+  height: 72px;
+  left: 0px;
+  top: 39px;
+  background-color: #E5E5E5;
+  font-family: Arial;
+}
+.scale {
+  display: inline-block; /* Строчно-блочный элемент */
+  overflow: hidden; /* Скрываем всё за контуром */
+ }
+ .scale img {
+  transition: 1s; /* Время эффекта */
+  display: block; /* Убираем небольшой отступ снизу */
+ }
+ .scale img:hover {
+  transform: scale(1.1); /* Увеличиваем масштаб */
+ }
+ .locationImageForm2
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 5px;
+   top: 57px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+ .locationImageOtborzapisei
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 67px;
+   top: 57px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  }
+
+ .locationImageSettingFirm
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 126px;
+   top: 57px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+ 
+ .locationImagePostavshik
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 190px;
+   top: 57px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+
+ .locationImagePricelist
+ {
+ position: absolute;
+ width: 55px;
+ height: 52px;
+ left: 252px;
+ top: 57px;
+ filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+
+ .locationImageZavod
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 317px;
+   top: 57px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+
+ .locationImageWareHous
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 383px;
+   top: 58px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+ .locationImageGroupTovar
+ {
+   position: absolute;
+   width: 55px;
+   height: 52px;
+   left: 451px;
+   top: 57px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+ .locationImageAnalogTovar
+ {
+   position: absolute;
+   width: 71px;
+   height: 60px;
+   left: 521px;
+   top: 54px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+
+ .locationImageReloadSorting
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 599px;
+   top: 57px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+
+ .locationImagePrice
+ {
+   position: absolute;
+   width: 46px;
+   height: 51px;
+   left: 661px;
+   top: 59px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }
+
+
+ .locationImageRedRows
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 724px;
+   top: 58px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }    
+ 
+ .locationImageColums
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 794px;  
+   top: 58px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }  
+ .locationImageReclama
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 861px;
+   top: 58px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }  
+
+ .locationImageProizvoditel
+ {
+   position: absolute;
+   width: 52px;
+   height: 52px;
+   left: 385px;
+   top: 58px;
+   filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+ }  
+
+/* menuButton --------------------------------------------------------------------------------------*/
+
+
+/* ComboBoxgroupTovar */
+.comboboxGrouPTovar
+{
+  position: absolute;
+  font-size: 14pt;
+  font-family: Arial;
+  width: 490px;
+  height: 32px;
+  left: 6px;
+  top: 130px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+.comboboxRaschet
+{
+  position: absolute;
+  font-size: 14pt;
+  font-family: Arial;
+  width: 260px;
+  height: 33px;
+  left: 505px;
+  top: 130px;
+  border: 2px solid #000000;
+  box-sizing: border-box;
+  border-radius: 6px;
+}
+
+/* ComboBoxgroupTovar */
+
+/* Kyrs */
+.divBox{
+display: block;
+  position: fixed; 
+
+    width: 115px;
+    height: 25px;
+    left: 739px;
+    top: 10px;
+
+
+background: #E5E5E5;
+border: 1px solid #000000;
+box-sizing: border-box;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 30px;
+
+}
+
+
+/* Kyrs */
+
+*{
+  box-sizing: border-box;
+}
+
+
+
+/* table */
+/* .tableS {
+  display: flex;
+  position: absolute;
+  width: 2800px;
+  height: 646px;
+  left: -265px;
+  top: 165px;
+  
+  background: #FFFFFF;
+} */
+
+/* table */
+
+
+
+
+
+
+/* modalWindow */
+
+
+
+.labelModal {
+
+  background-position: bottom;
+  font-family: Arial;
+  font-size: 18px;
+  margin: 3px;
+}
+.inputModal
+{
+
+  font-family: Arial;
+  font-size: 18px;
+  width: 254px;
+  height: 35px;
+  margin: 3px;
+  border: 1px solid;
+  border-color: black;
+  border-radius: 10px;
+  box-sizing: border-box;
+  background: #eceeef;
+
+}
+
+
+
+/* Tabpanel */
+
+
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+
+  font-size: 16px;
+  font-family: Arial;
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+  background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+  background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: absolute;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+/* Tabpanel */
+
+
+/* radio-button---------------------------------------------------------- */
+
+/* для элемента input c type="radio" */
+.custom-radio>input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+}
+
+/* для элемента label связанного с .custom-radio */
+.custom-radio>span {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+
+/* создание в label псевдоэлемента  before со следующими стилями */
+.custom-radio>span::before {
+  content: '';
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border: 1px solid #adb5bd;
+  border-radius: 50%;
+  margin-right: 0.5em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на радио */
+.custom-radio>input:not(:disabled):not(:checked)+span:hover::before {
+  border-color: #b3d7ff;
+}
+
+/* стили для активной радиокнопки (при нажатии на неё) */
+.custom-radio>input:not(:disabled):active+span::before {
+  background-color: #b3d7ff;
+  border-color: #b3d7ff;
+}
+
+/* стили для радиокнопки, находящейся в фокусе */
+.custom-radio>input:focus+span::before {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для радиокнопки, находящейся в фокусе и не находящейся в состоянии checked */
+.custom-radio>input:focus:not(:checked)+span::before {
+  border-color: #80bdff;
+}
+
+/* стили для радиокнопки, находящейся в состоянии checked */
+.custom-radio>input:checked+span::before {
+  border-color: #0b76ef;
+  background-color: #0b76ef;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='%23fff'/%3e%3c/svg%3e");
+}
+
+/* стили для радиокнопки, находящейся в состоянии disabled */
+.custom-radio>input:disabled+span::before {
+  background-color: #e9ecef;
+}
+/* radio-button---------------------------------------------------------- */
+
+/*  modalWindow--------------------------------------------------------- */
+
+/* Table --------------------------------------------*/
+
+/*table {*/
+/*  border-collapse: collapse;*/
+/*  border-spacing: 0;*/
+/*  width: 100%;*/
+/*  border: 1px solid #ddd;*/
+
+/*}*/
+
+/*th,*/
+/*td {*/
+/*  text-align: left;*/
+/*  padding: 8px;*/
+/*}*/
+
+/*tr:nth-child(even) {*/
+/*  background-color: #f2f2f2*/
+/*}*/
+
+
+.tab {
+  overflow: hidden;
+  border: 1px solid #ccc;
+  background-color: #f1f1f1;
+}
+/* Table -0---------------------------------------*/
+
+
+/* ComboTypePostabchik */
+.ComboTypePostabchik
+{
+
+height:30px;
+font-size: 14pt;
+font-family: Arial;
+width: 350px;
+
+border: 2px solid #000000;
+box-sizing: border-box;
+border-radius: 6px;
+}
+
+/* ComboTypePostabchik */
+
+/* SearchIn */
+
+.SearchIn
+{
+  left: 800px;
+  width: 369px;
+  top: 126px;
+  position: fixed;
+
+}
+/* SearchIn */

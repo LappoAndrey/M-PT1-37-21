@@ -1,0 +1,115 @@
+input.Email{font-size: 19px;
+padding: 12px 20px;
+position: absolute;
+width: 426px;
+height: 64px;
+left: 797px;
+top: 386px;
+font-family: Arial;
+background: #FFFFFF;
+border: 1px solid #1565D8;
+box-sizing: border-box;
+box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+border-radius: 6px;
+}
+
+
+
+input.Pass
+{
+    font-size: 19px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 426px;
+    height: 64px;
+    left: 797px;
+    top: 492px;
+    box-sizing: border-box;
+    background: #FFFFFF;
+    border: 1px solid #1565D8;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    border-radius: 6px;
+}
+
+
+.bbutton {
+    position: fixed;
+    width: 426px;
+    height: 64px;
+    left: 797px;
+    top: 572px;
+    background: #1565D8;
+    border-radius: 6px;
+    font-size: 20px;
+    align-items: center;
+    color: #FFFFFF;
+}
+
+.bbutton:hover {
+	color: #fff;
+	background: #498dec;
+}
+
+
+label.maill
+{
+    position: absolute;
+    height: 19px;
+    left: 802px;
+    top: 354px;
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #696F79;
+
+
+   
+    
+}
+
+label.passwordD
+{
+    position: absolute;
+
+    height: 19px;
+    left: 800px;
+    top: 462px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #696F79;
+}
+
+
+.textAvtorization
+{
+
+    position: absolute;
+
+    width: 387px;
+    height: 19px;
+    left: 915px;
+    top: 295px;
+
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 36px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    color: #000000;
+}

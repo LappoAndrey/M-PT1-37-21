@@ -1,0 +1,166 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head_>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <title>ЗАО ФАРМАСЕРВИС</title>
+    <style>
+        /* Demo Background */
+
+
+        option{
+
+            color:#2148C0;
+            background-color:white;
+        }
+        .form-control:focus {
+            background: unset;
+            color: white;
+
+        }
+
+        .form-control {
+
+            background-color: black;
+            color: white;
+
+        }
+
+        input[type="email"]::-webkit-input-placeholder {
+            color: white;
+        }
+
+        input[type="password"]::-webkit-input-placeholder {
+            color: white;
+        }
+		
+		input[type="password2"]::-webkit-input-placeholder {
+            color: white;
+        }
+		
+        input[type="text"]::-webkit-input-placeholder {
+            color: white;
+        }
+    </style>
+</head_>
+
+<body style="background:url('{% static  '/image/reg_aut/BG.png' %}')no-repeat center center fixed;
+background-size: cover;">
+{% if message == 0 %}
+<div class="alert alert-warning alert-dismissible" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+  Пароли должны совпадать!
+</div>
+{% elif message == 1 %}
+    <div class="alert alert-warning alert-dismissible" role="alert" >
+
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span></button>
+  Пароли должен содерать больше 10 символов!
+</div>
+{% endif %}
+
+
+    <div class="container pt-5" align="center" style="margin-bottom:auto; margin-top:200px ">
+        <div class="col" style="padding:20px;">
+            <img src="{% static 'image/reg_aut/Logo 1.png'%}" alt="" style="width: 150px;">
+        </div>
+
+        <div class="col">
+
+
+            <form class="form-horizontal" method="POST" autocomplete="off">
+                {% csrf_token %}
+                <div class="form-group">
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background-color:unset;"><i aria-hidden="true"><img
+                                        src="{% static 'image/reg_aut/mail.png'%}" style="width: 20px;" alt=""></i></span>
+                            <input type="email" style="background-color:unset;" class="form-control" name="email"
+                                id="email" placeholder="E-MAIL" required />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background-color:unset;"><i aria-hidden="true"><img
+                                        src="{% static 'image/reg_aut/user.png'%}" alt=""></i></span>
+                            <input style="background-color:unset;" type="text" class="form-control" name="name"
+                                id="name" placeholder="Введите свой логин"required  />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background-color:unset;"><i aria-hidden="true"><img
+                                src="{% static 'image/reg_aut/firma.png'%}" style="width: 20px;" alt=""></i></span>
+                                <select  name="firma_id" class="form-control" id="inputGroupSelect01" style="background-color:unset;" required >
+                                    <option selected="">Выберите название вашей организации</option>
+                                    {% for i in model_firms %}
+                                    <option value="{{i.id}}">{{i.name}} {# {{i.name}} </option>#}
+                                    {% endfor %}
+                                  </select>
+                          </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background-color:unset;"><i aria-hidden="true"><img
+                                        src="{% static 'image/reg_aut/lock.png'%}" alt=""></i></span>
+                            <input style="background-color:unset;" type="password" class="form-control" name="password"
+                                id="password" placeholder="Введите пароль" required />
+                        </div>
+                    </div>
+                </div>
+
+				<div class="form-group">
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon" style="background-color:unset;"><i aria-hidden="true"><img
+                                        src="{% static 'image/reg_aut/lock.png'%}" alt=""></i></span>
+                            <input style="background-color:unset;" type="password" class="form-control" name="password2"
+                                id="password2" placeholder="Повторите пароль" required />
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <input type="submit" class="btn btn-light "
+                        style="
+                    font-family: Montserrat;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 16px;
+                    text-align: center;
+                    text-transform: uppercase;color: #2148C0;
+                    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); max-width: 400px; width: 40%; min-width: 150px; " value="РЕГИСТРАЦИЯ">
+
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

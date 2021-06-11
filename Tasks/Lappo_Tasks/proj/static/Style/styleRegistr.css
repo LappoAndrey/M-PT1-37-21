@@ -1,0 +1,283 @@
+.back
+{
+    position: absolute;
+width: 20px;
+height: 20px;
+left: 719px;
+top: 74px;
+
+}
+.backText   
+{
+    position: absolute;
+width: 39px;
+height: 19px;
+left: 743px;
+    top: 59px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 600;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #8692A6;
+}
+
+label.fullname
+{
+    position: absolute;
+
+    height: 19px;
+    left: 802px;
+    top: 255px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #696F79;
+}
+
+label.firma
+{
+    position: absolute;
+
+    height: 19px;
+    left: 802px;
+    top: 363px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #696F79;
+}
+
+.textOption
+{
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #696F79;
+}
+label.mail
+{
+    position: absolute;
+
+    height: 19px;
+    left: 800px;
+    top: 458px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #696F79;
+    
+}
+label.password
+{
+    position: absolute;
+
+    height: 19px;
+    left: 802px;
+    top: 559px;
+    
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    
+    color: #696F79;
+}
+label.password2
+{
+    position: absolute;
+
+height: 19px;
+left: 802px;
+top: 662px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+label.agree
+{
+    
+position: absolute;
+width: 220px;
+height: 19px;
+left: 832px;
+top: 745px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #696F79;
+}
+
+button.reg
+{
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 800px;
+top: 781px;
+
+background: #1565D8;
+border-radius: 6px;
+}
+label.button
+{
+    position: absolute;
+width: 132px;
+height: 19px;
+left: 947px;
+top: 804px;
+
+font-family: Inter;
+font-style: normal;
+font-weight: 500;
+font-size: 20px;
+line-height: 19px;
+display: flex;
+align-items: center;
+text-align: center;
+
+color: #FFFFFF;
+
+}
+
+
+input.fullname{
+    font-size: 19px;
+    position: absolute;
+    width: 426px;
+    height: 64px;
+    left: 797px;
+    top: 286px;
+    padding: 12px 20px;
+    background: #FFFFFF;
+    border: 1px solid #1565D8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    border-radius: 6px;
+}
+
+.listbox{
+    font-size: 19px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 426px;
+    height: 64px;
+    left: 797px;
+    top: 384px;
+    font-family: Arial;
+    background: #FFFFFF;
+    border: 1px solid #1565D8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    border-radius: 6px;
+
+}
+
+input.mail
+{
+    font-size: 19px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 426px;
+    height: 64px;
+    left: 797px;
+    top: 486px;
+
+    
+    background: #FFFFFF;
+    border: 1px solid #1565D8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    border-radius: 6px;
+}
+input.password
+{
+    font-size: 19px;
+    padding: 12px 20px;
+    position: absolute;
+    width: 426px;
+    height: 64px;
+    left: 795px;
+    top: 585px;
+    
+    background: #FFFFFF;
+    border: 1px solid #1565D8;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+    border-radius: 6px;
+}
+input.password2
+{
+    font-size: 19px;
+    padding: 12px 20px;
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 795px;
+top: 690px;
+
+background: #FFFFFF;
+border: 1px solid #1565D8;
+box-sizing: border-box;
+box-shadow: 0px 4px 10px 3px rgba(0, 0, 0, 0.11);
+border-radius: 6px;
+}
+
+button
+{
+    position: absolute;
+width: 426px;
+height: 64px;
+left: 800px;
+top: 781px;
+
+background: #1565D8;
+border-radius: 6px;
+font-size: 20px;
+align-items: center;
+
+
+color: #FFFFFF;
+}

@@ -1,0 +1,1029 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'Style/StyleHome.css' %}">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <title>Фармасервис</title>
+
+  <script src="/Scripts/ScriptHome.js"></script>
+  <script type="text/javascript" src="{% static 'Scripts/ScriptHome.js' %}"></script>
+  <style>
+    .city {
+      display: none
+    }
+
+
+    th, td {
+   border: 1px solid grey;
+}
+   th {
+    background: #afd792; /* Цвет фона */
+    color: #333;  /* Цвет текста */
+   }
+  tr:hover {
+    background-color: #d5e6a2;
+      color:red;
+   }
+  </style>
+
+</head>
+
+<body style=" background-color: #E5E5E5">
+
+  <!-- прелоад -->
+  <div class="preloader">
+    <div class="preloader__row">
+      <div class="preloader__item"></div>
+      <div class="preloader__item"></div>
+    </div>
+  </div>
+  <!-- прелоад -->
+
+
+{#      <script>#}
+{##}
+{#        var image = document.getElementById("image");#}
+{#        var image2 = document.getElementById("image2");#}
+{#        var image3 = document.getElementById("image3");#}
+{#        var currentPos = 0;#}
+{#        var images = ["/image/advertising/002.JPG", "/image/advertising/003.JPG", "/image/advertising/004.JPG", "/image/advertising/013.JPG", "/image/advertising/014.JPG", "/image/advertising/015.JPG", "/image/advertising/022.JPG"]#}
+{#        var images2 = ["/image/advertising/006.JPG", "/image/advertising/007.JPG", "/image/advertising/008.JPG", "/image/advertising/016.JPG", "/image/advertising/017.JPG", "/image/advertising/018.JPG", "/image/advertising/023.JPG", "/image/advertising/025.JPG"]#}
+{#        var images3 = ["/image/advertising/010.JPG", "/image/advertising/011.JPG", "/image/advertising/012.JPG", "/image/advertising/019.JPG", "/image/advertising/020.JPG", "/image/advertising/021.JPG", "/image/advertising/024.JPG", "/image/advertising/026.JPG"]#}
+{##}
+{#        function volgendefoto() {#}
+{#          if (++currentPos >= images.length)#}
+{#            currentPos = 0;#}
+{##}
+{#          image.src = images[currentPos];#}
+{#          image2.src = images2[currentPos];#}
+{#          image3.src = images3[currentPos];#}
+{#        }#}
+{##}
+{#        setInterval(volgendefoto, 5000);#}
+{#      </script>#}
+      <!-- реклама -->
+
+
+    <div class="w3-rest ">
+
+
+      <!-- Меню ------------------------------------------------->
+      <div class="navbar">
+        <div class="dropdown">
+          <button class="dropbtn">Файл
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Поиск подстроки ...</a>
+            <a href="#">Поиск по ключевым словам ...</a>
+            <a href="#">Печать</a>
+            <a href="#">Предварительный просмотр</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Выборка
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Фирмы-поставщики</a>
+            <a href="#">Прайс лист</a>
+            <a href="#">Заводы-производители ...</a>
+            <a href="#">Товары</a>
+            <a href="#">Группы товаров ...</a>
+            <a href="#">Работа с ценами ...</a>
+            <a href="#">Отбор записей и подбор вариантов ...</a>
+            <a href="#">Информация о выборке</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button class="dropbtn">Отметки
+            <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="dropdown-content">
+            <a href="#">Список отобранных строк ...</a>
+            <a href="#">Отобрать строку в список отобранных</a>
+            <a href="#">Отобрать всю выборку в список </a>
+            <a href="#">Убрать всю выборку из списка </a>
+            <a href="#">Полностью очистить список отобранных</a>
+            <a href="#">Запрашивать требуемое кол-во при отборе строк</a>
+          </div>
+        </div>
+      </div>
+      <!-- ---------------------------------------------- -->
+
+      <!-- menuButton navbarButton-------------------->
+
+      <div class="navbarButton">
+
+        <div class="scale"><a class="locationImageForm2" href="#" title="Отобранные строки"><img
+              src="{% static '/image/small_wholesale/Отобранные строки.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a class="locationImageOtborzapisei" href="#" title="Отбор записей и подбор вариантов"><img
+              src="{% static '/image/small_wholesale/Отбор записей.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a class="locationImageSettingFirm"
+            onclick="document.getElementById('id01').style.display='block'" title="Настройка фирмы продавца"><img
+              src="{% static '/image/small_wholesale/Настройка фирмы продавца.png' %}" alt="" class="scale"></a>
+        </div>
+        <div class="scale"><a class="locationImagePostavshik"
+            onclick="document.getElementById('id02').style.display='block'" title="Поставщики"><img
+              src="{% static '/image/small_wholesale/Поставщики.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a class="locationImagePricelist" href="#" title="Прайс-лист"><img
+              src="{% static '/image/small_wholesale/Прайс лист.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a onclick="document.getElementById('id03').style.display='block'" class="locationImageZavod"
+            href="#" title="Заводы-производители"><img src="{% static '/image/small_wholesale/Заводы производители.png' %}" alt=""
+              class="scale"></a>
+        </div>
+		
+        <div class="scale"><a class="locationImageProizvoditel" href="#" title="Производитель"><img
+              src="{% static '/image/small_wholesale/warehouse.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a onclick="document.getElementById('id04').style.display='block'"
+            class="locationImageGroupTovar" href="#" title="Группы товаров"><img src="{% static '/image/small_wholesale/Группы товаров.png' %}"
+              alt="" class="scale"></a></div>
+        <div class="scale"><a class="locationImageAnalogTovar" href="#" title="Аналоги"><img
+              src="{% static '/image/small_wholesale/Аналогиъ.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a class="locationImageReloadSorting" href="#" title="Изменение сортировки"><img
+              src="{% static '/image/small_wholesale/Изменение сортировки.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a onclick="document.getElementById('id05').style.display='block'" class="locationImagePrice"
+            href="#" title="Работа с ценами и курсами"><img src="{% static '/image/small_wholesale/Работа с ценами.png' %}" alt=""
+              class="scale"></a>
+        </div>
+        <div class="scale"><a class="locationImageRedRows" href="#" title="Красные записи"><img
+              src="{% static '/image/small_wholesale/Красные записи.png' %}" alt="" class="scale"></a></div>
+        <div class="scale"><a class="locationImageColums" href="#" title="Выбор колонок"><img
+              src="{% static '/image/small_wholesale/выбор колонок.png' %}" alt="" class="scale"></a></div>
+      </div>
+      <!-- menuButton -------------------->
+
+
+
+      <!-- ModalPostavshiki -->
+      <div id="id02" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" id="Modal2">
+          <header class="w3-container " style="background-color: #BAC6F2;">
+            <span onclick="document.getElementById('id02').style.display='none'"
+              class="w3-button w3-xlarge w3-display-topright "
+              style="background-color:#BAC6F2 ; color: white;">&times;</span>
+            <h2 style="color:white;font-family:Arial, Helvetica, sans-serif;">Список фирм - продавцов</h2>
+          </header>
+          <div class="w3-container">
+            <div class="w3-sidebar w3-bar-block" style="display:none" id="mySidebar">
+              <button onclick="w3_close()" class="w3-bar-item w3-button w3-large">Закрыть &times;</button>
+              <button class="w3-bar-item  w3-button w3-large ">Выбрать выделенные фирмы</button>
+              <button class="w3-bar-item w3-button w3-large">Выбрать все фирмы из списка</button>
+              <button class="w3-bar-item w3-button w3-large"
+                onclick="document.getElementById('id01').style.display='block'">
+                Настройки поставщика</button>
+              <button class="w3-bar-item w3-button w3-large">Печать списка фирм</button>
+              <button class="w3-bar-item w3-button w3-large">Параметры по умолчанию</button>
+            </div>
+
+            <!-- Page Content -->
+
+            <!-- comboBox  -->
+            <button class="w3-button  w3-xlarge" onclick="w3_open()">☰</button>
+            <div class="w3-container">
+              <div class="w3-container w3-margin">
+                <select name="TypePostabchik" class="ComboTypePostabchik" id="TypePostabchik">
+                  <option value="AllPostashik">Все поставщики</option>
+                  <option value="SpecPredlosh">Спецпредложения</option>
+                  <option value="AllPrice">Полные прайс-листы</option>
+                  <option value="PredpochOrg">Предпочтительные организации</option>
+                  <option value="neshelatOrg">Нежелательные организации</option>
+                  <option value="VladelIM">Владельцы ИМ формата "Фармасервис"</option>
+                </select>
+              </div>
+
+              <!-- comboBox  -->
+
+              <!-- table -->
+              <div class="w3-margin">
+                <div style="height:400px; overflow-x:auto;">
+                  <table class="w3-table w3-striped w3-border w3-bordered w3-hoverable w3-table-all" id="tableModal">
+                    <tr>
+                      <th>Id</th>
+                          <th>DRUGNAME</th>
+                    </tr>
+                    <tbody>
+                      <tr>
+                        <td></td>
+                         <td></td>
+                      </tr>
+                    </tbody>
+                  </table>
+
+                </div>
+              </div>
+            </div>
+            <script>
+              function w3_open() {
+
+                document.getElementById("mySidebar").style.width = "23%";
+                console.log(String(document.getElementById("Modal2").style.height));
+                document.getElementById("mySidebar").style.height = "30%";
+                document.getElementById("mySidebar").style.display = "block";
+              }
+
+              function w3_close() {
+                document.getElementById("mySidebar").style.display = "none";
+              }
+            </script>
+            <!-- table -->
+
+            <!-- SearchInModal -->
+            <div class="w3-margin w3-container">
+              <input class="w3-input w3-border w3-padding" style="font-size:12pt; " type="text" placeholder="Поиск.."
+                id="myInput" onkeyup="FunctionSearchModalPostavshik()">
+              <script>
+                function FunctionSearchModalPostavshik() {
+                  var input, filter, table, tr, td, i;
+                  input = document.getElementById("myInput");
+                  filter = input.value.toUpperCase();
+                  table = document.getElementById("tableModal");
+                  tr = table.getElementsByTagName("tr");
+                  for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                      txtValue = td.textContent || td.innerText;
+                      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                      } else {
+                        tr[i].style.display = "none";
+                      }
+                    }
+                  }
+                }
+              </script>
+            </div>
+            <!-- SearchInModal -->
+          </div>
+        </div>
+      </div>
+      <!-- ModalPostavshiki -->
+
+
+      <!-- ModalSettingProdavec -->
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+          <header class="w3-container" style="background-color: #BAC6F2;">
+            <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-xlarge w3-display-topright"
+              style="background-color:#BAC6F2 ; color: white;">&times;</span>
+            <h2 style="color:white;font-family:Arial, Helvetica, sans-serif;">БРИТИТРЕЙД - параметры пользователя</h2>
+          </header>
+          <div class="w3-bar w3-border-bottom">
+            <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'ParamsObsh')">Общие
+              параметры</button>
+            <button class="tablink w3-bar-item w3-button" onclick="openCity(event, 'InternetShop')">Доступ к
+              интернет-магазину</button>
+          </div>
+          <div id="ParamsObsh" class="w3-container city">
+
+            <form class="w3-container w3-half">
+              <br />
+
+              <label class="labelModal">Название в базе данных:</label>
+              <input class="inputModal" id="nameBase" name="nameBase" placeholder="Название"><br />
+
+              <label class="labelModal">Условия работы(примечания):</label>
+              <input class="inputModal" placeholder="Условия работы"><br /><br />
+
+              <input value="" type="checkbox" id="predposchitelnai" name="predposchitelnai">
+              <label for="predposchitelnai" class="labelModal">Предпочтительный</label><br />
+
+              <input value="" type="checkbox" id="Nepredposchitelnai" name="Nepredposchitelnai">
+              <label for="Nepredposchitelnai" class="labelModal">Нежелательная</label><br /><br />
+
+              <label class="custom-radio">
+                <input type="radio" name="Insert" id="procentSkidka" value="dw">
+                <span class="labelModal">Процент скидки:</span>
+              </label>
+              <br />
+              <input placeholder="0" class="inputModal">
+              <br />
+              <label class="custom-radio">
+                <input type="radio" name="Insert" id="Mnoshitel" value="dw" class="inputModal ">
+                <span class="labelModal">Множитель пересчета цен:</span>
+              </label><br />
+              <input placeholder="1" class=" inputModal"><br />
+
+            </form>
+          </div>
+          <div id="InternetShop" class="w3-container city">
+            <form action="">
+              <br />
+              <div style="height:400px; overflow-x:auto;">
+                <table class="w3-table w3-striped w3-border w3-bordered w3-hoverable w3-table-all">
+
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                    <th>Points</th>
+                  </tr>
+                  <tbody>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                    </tr>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                    </tr>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                    </tr>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                    </tr>
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                      <th>Points</th>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="w3-container w3-light-grey w3-padding">
+
+                <button class="w3-button w3-right w3-white w3-border">Добавить</button>
+                <button class="w3-button w3-right w3-white  w3-border">Проверить доступ</button>
+                <button class="w3-button w3-right w3-white  w3-border">Удалить</button>
+              </div>
+            </form>
+          </div>
+          <div class="w3-container w3-light-grey w3-padding">
+            <button class="w3-button w3-right w3-green w3-border" type="submit">
+              Принять
+            </button>
+            <button class="w3-button w3-right w3-green w3-border"
+              onclick="document.getElementById('id01').style.display='none'">
+              OK
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- ModalSettingProdavec -->
+
+      <!-- ModalZavod -->
+      <div id="id03" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+          <header class="w3-container" style="background-color: #BAC6F2;">
+            <span onclick="document.getElementById('id03').style.display='none'"
+              class="w3-button w3-xlarge w3-display-topright"
+              style="background-color:#BAC6F2 ; color: white;">&times;</span>
+            <h2 style="color:white;font-family:Arial, Helvetica, sans-serif;">Заводы - производители</h2>
+          </header>
+          <div class="w3-row">
+            <div class="w3-half w3-container ">
+              <div style="height:400px; overflow-x:auto; margin-top:10px; margin-bottom:10px">
+                <table oncontextmenu="alert(window.event.srcElement.id + ', '
+            + window.event.srcElement.outerText); return false;"
+                  class="w3-table w3-striped w3-border w3-bordered w3-hoverable w3-table-all" id="TableZavod">
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                  </tr>
+                  <tbody>
+                    <tr>
+                      <td>w</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>w</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>w</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>w</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>w</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>w</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>w</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                    </tr>
+                    <tr>
+                      <td>Eve</td>
+                      <td>Jackson</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="w3-half w3-container w3-margin-top">
+
+              <div class="w3-container w3-cell-row" style="margin-top:60px;">
+                <button class="w3-button w3-round-large w3-large w3-margin"
+                  style="font-size: 14pt; background-color:  #BAC6F2;font-family: Arial, Helvetica, sans-serif;">Выбрать
+                  выделенные заводы</button>
+                <button class="w3-button w3-round-large w3-large  w3-margin"
+                  style="font-size: 14pt;background-color:  #BAC6F2; font-family: Arial, Helvetica, sans-serif;">Выбрать
+                  выделенные страны</button>
+                <button class="w3-button w3-round-large w3-large  w3-margin"
+                  style="font-size: 14pt;background-color:  #BAC6F2;font-family: Arial, Helvetica, sans-serif;">Выбрать
+                  все
+                  заводы и страны</button>
+              </div>
+
+            </div>
+            <!-- SearchZavod -->
+            <div class="w3-margin">
+              <input class="w3-input w3-border w3-padding" style="font-size:12pt; " type="text" placeholder="Поиск.."
+                id="SearchZavod" onkeyup="functionModalZavod()">
+              <script>
+                function functionModalZavod() {
+                  var input, filter, table, tr, td, i;
+                  input = document.getElementById("SearchZavod");
+                  filter = input.value.toUpperCase();
+                  table = document.getElementById("TableZavod");
+                  tr = table.getElementsByTagName("tr");
+                  for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                      txtValue = td.textContent || td.innerText;
+                      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                      } else {
+                        tr[i].style.display = "none";
+                      }
+                    }
+                  }
+                }
+              </script>
+            </div>
+            <!-- SearchZavod -->
+          </div>
+
+        </div>
+      </div>
+      <!-- ModalZavod -->
+
+
+      <!-- ModalGroupTovar -->
+      <div id="id04" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+          <header class="w3-container" style="background-color: #BAC6F2;">
+            <span onclick="document.getElementById('id04').style.display='none'"
+              class="w3-button w3-xlarge w3-display-topright"
+              style="background-color:#BAC6F2 ; color: white;">&times;</span>
+            <h2 style="color:white;font-family:Arial, Helvetica, sans-serif;">Классификатор</h2>
+          </header>
+          <div class="w3-container">
+            <div class="w3-row">
+              <div class="w3-half w3-container">
+
+                <div style="height:400px; overflow-x:auto; margin-top:10px; margin-bottom:10px">
+                  <table class="w3-table w3-striped w3-border w3-bordered w3-hoverable w3-table-all"
+                    id="tableGroupTovar">
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                    </tr>
+                    <tbody>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                      </tr>
+
+                      <tr>
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                      </tr>
+                      <tr>
+                        <td>Adam</td>
+                        <td>Johnson</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+
+              </div>
+              <div class="w3-half w3-container">
+
+                <div style="height:400px; overflow-x:auto; margin-top:10px; margin-bottom:10px;">
+                  <table class="w3-table w3-striped w3-border w3-bordered w3-hoverable w3-table-all"
+                    id="tableGroupTovar">
+                    <tr>
+                      <th>First Name</th>
+                      <th>Last Name</th>
+                      <th>Last Name</th>
+                    </tr>
+                    <tbody>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>Smith</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Jill</td>
+                        <td>DQWDQW</td>
+                        <td>Smith</td>
+                      </tr>
+
+                      <tr>
+                        <td>Eve</td>
+                        <td>Jackson</td>
+                        <td>Smith</td>
+                      </tr>
+                      <tr>
+                        <td>Adam</td>
+                        <td>Johnson</td>
+                        <td>Smith</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+
+              </div>
+            </div>
+
+            <div class="w3-row">
+              <button class="w3-button w3-margin"
+                style="font-size: 14pt; background-color: #BAC6F2; font-family: Arial, Helvetica, sans-serif;">Выбрать
+                группу</button>
+              <button class="w3-button"
+                style="font-size: 14pt; background-color: #BAC6F2;font-family: Arial, Helvetica, sans-serif;">Все
+                группы</button>
+            </div>
+
+
+            <!-- SearchGroupTovar -->
+            <div class="w3-margin">
+              <input class="w3-input w3-border w3-padding" style="font-size:12pt; " type="text" placeholder="Поиск.."
+                id="SearchGroupTovar" onkeyup="functionModalGrouptovar()">
+              <script>
+                function functionModalGrouptovar() {
+                  var input, filter, table, tr, td, i;
+                  input = document.getElementById("SearchGroupTovar");
+                  filter = input.value.toUpperCase();
+                  table = document.getElementById("tableGroupTovar");
+                  tr = table.getElementsByTagName("tr");
+                  for (i = 0; i < tr.length; i++) {
+                    td = tr[i].getElementsByTagName("td")[0];
+                    if (td) {
+                      txtValue = td.textContent || td.innerText;
+                      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                      } else {
+                        tr[i].style.display = "none";
+                      }
+                    }
+                  }
+                }
+              </script>
+            </div>
+            <!-- SearchGroupTovar -->
+          </div>
+        </div>
+      </div>
+      <!-- ModalGroupTovar -->
+
+
+      <!-- ModalWorkPrice -->
+      <div id="id05" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom">
+          <header class="w3-container" style="background-color: #BAC6F2;">
+            <span onclick="document.getElementById('id05').style.display='none'"
+              class="w3-button w3-xlarge w3-display-topright"
+              style="background-color:#BAC6F2 ; color: white;">&times;</span>
+            <h2 style="color:white;font-family:Arial, Helvetica, sans-serif;">Работа с ценами</h2>
+          </header>
+          <div style="font-family:Arial, Helvetica, sans-serif;">
+
+            <div class="w3-row">
+              <div class="w3-half w3-container">
+
+                <h4>Валюты и курсы</h4>
+                <h5>Валюта показа:</h5>
+                <select name="ValutKyrs" class="w3-select" id="ValutKyrs">
+                  <option value="BellRybl">Бел.руб.</option>
+                  <option value="DollRybl">Доллар</option>
+                </select>
+                <h5>Валютный курс:</h5>
+                <input class="w3-input w3-border" value="2.641" id="valueMoney" type="Money">
+
+
+                <div class="w3-row w3-margin">
+                  <div class="w3-half w3-container">
+                    <input class="w3-check" type="checkbox" checked="checked">
+                    <label>Группа 1</label><br />
+                    <input class="w3-check" type="checkbox" checked="checked">
+                    <label>Группа 2</label><br />
+                    <input class="w3-check" type="checkbox" checked="checked">
+                    <label>Группа 3</label><br />
+                    <input class="w3-check" type="checkbox" checked="checked">
+                    <label>Группа 4</label><br />
+                  </div>
+                  <div class="w3-half w3-container">
+                    <input class="w3-check" type="checkbox" checked="checked">
+                    <label>Группа 5</label><br />
+                    <input class="w3-check" type="checkbox" checked="checked">
+                    <label>Группа 6</label><br />
+                    <input class="w3-check" type="checkbox" checked="checked">
+                    <label>Группа 7</label><br />
+                    <button class=" w3-button w3-padding-small w3-round-large w3-border"
+                      style="margin-top: 3px; width:110px;">Вкл.Все</button>
+                  </div>
+                </div>
+
+                <div class="w3-row w3-container  w3-margin">
+                  <div class="w3-col" style="width:150px;margin-right: 40px;"> <input class="w3-check" type="checkbox">
+                    <label>Кол-во 1-x цен</label>
+                  </div>
+                  <div class="w3-rest">
+                    <input class="w3-input w3-border" type="number" id="Countprice" style="width: 100px;">
+                  </div>
+                </div>
+
+              </div>
+              <div class="w3-half w3-container ">
+                <h4>Дефектура товаров</h4>
+
+                <div class="w3-container">
+                  <input class="w3-check" type="checkbox"><label> Имеющихся в наличии</label><br />
+
+                  <div class="w3-row w3-container  w3-margin">
+                    <label>Не более:</label>
+                    <input class="w3-input w3-border" min=0 type="number"
+                      style="width: 100px;font-size: 10pt; height: auto;">
+                  </div>
+
+                  <div class="w3-row w3-container  w3-margin">
+                    <label>Не менее:</label>
+                    <input class="w3-input w3-border" min=0 type="number" style="width: 100px; font-size: 10pt;">
+                  </div>
+
+                </div>
+
+
+                <div class="w3-container">
+                  <input class="w3-check" type="checkbox"><label> Имеющ. и бывших в наличии</label><br />
+
+                  <div class="w3-row w3-container  w3-margin">
+                    <label>Не более:</label>
+                    <input class="w3-input w3-border" min=0 type="number"
+                      style="width: 100px;font-size: 10pt; height: auto;">
+                  </div>
+
+                  <div class="w3-row w3-container  w3-margin">
+                    <label>Не менее:</label>
+                    <input class="w3-input w3-border" min=0 type="number" style="width: 100px; font-size: 10pt;">
+                  </div>
+
+                </div>
+
+
+                <div class="w3-container">
+                  <input class="w3-check" type="checkbox"><label> Соотношение "есть/нет"</label><br />
+
+                  <div class="w3-row w3-container  w3-margin">
+                    <label>Есть не более,%:</label>
+                    <input class="w3-input w3-border" min=0 type="number"
+                      style="width: 100px;font-size: 10pt; height: auto;">
+                  </div>
+
+                  <div class="w3-row w3-container  w3-margin">
+                    <label>Есть не менее,%:</label>
+                    <input class="w3-input w3-border" min=0 type="number" style="width: 100px; font-size: 10pt;">
+                  </div>
+
+                </div>
+              </div>
+              <div class="w3-container w3-right">
+                <button class="w3-button w3-margin"
+                  style="font-size: 14pt; width: 100px;background-color: #BAC6F2; font-family: Arial, Helvetica, sans-serif;">OK</button>
+
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </div>
+      <!-- ModalWorkPrice -->
+
+
+
+      <!-- comboBox  -->
+      <div>
+        <select name="tovarGroup" class="w3-select" id="groupTovar" style="width: 490px;  font-size: 14pt;
+    font-family: Arial;">
+          <option value="AllGroup">Все группы</option>
+          <option value="LekVesh">Лекарственные вещества</option>
+          <option value="VacinaAndSivortka">Вакцины и сывортки</option>
+          <option value="PreparatiMasla">Препараты на основе растительного сырья</option>
+          <option value="PredmetnaznachYxodZaBolnim">Предметы мед.назначения и ухода за больными</option>
+          <option value="LechKosmetika">Лечебная косметика, предметы санитарии и гигиены</option>
+          <option value="DetskoePitanie">Лечебное и дествкое питание, пищевые добавки</option>
+          <option value="Sybstacii">Субстанции</option>
+          <option value="Medtexnik">Медтехника</option>
+        </select>
+
+
+        <select name="Raschet" class="w3-select" id="Raschet" style="font-size: 14pt;
+    font-family: Arial;
+    width: 260px;">
+          <option value="RaschetOtpysk">Расчетно-отпускная цена</option>
+          <option value="OptPrice">Оптовая цена</option>
+        </select>
+      </div>
+      <!-- comboBox  -->
+
+
+      <!-- контекст меню для таблицы        -->
+      <div id="context-menu">
+        <div class="item">
+          <i class="fa fa-cut"></i> Cut
+        </div>
+        <div class="item">
+          <i class="fa fa-clone"></i> Copy
+        </div>
+        <div class="item">
+          <i class="fa fa-paste"></i> Paste
+        </div>
+        <div class="item">
+          <i class="fa fa-trash-o"></i> Delete
+        </div>
+        <hr>
+        <div class="item">
+          <i class="fa fa-refresh"></i> Reload
+        </div>
+        <div class="item">
+          <i class="fa fa-times"></i> Exit
+        </div>
+      </div>
+      <!-- контекст меню для таблицы        -->
+
+
+      <!-- tableHome -->
+      <div style="height:730px; overflow-x:auto;">
+
+        <table id ="nameede" name = "nameede" oncontextmenu="alert(window.event.srcElement.id + ', '
+  + window.event.srcElement.outerText); return false;"
+          class="w3-table w3-striped w3-border w3-bordered w3-hoverable w3-table-all" >
+
+          <tr>
+              <th>Рейтинг</th>
+              <th>Наименование</th>
+              <th>Р/О цена</th>
+              <th>Производитель</th>
+              <th>Страна</th>
+              <th>Поставщик</th>
+              <th>Тел. производителя</th>
+              <th>Срок годн.</th>
+          </tr>
+          <tbody>
+     {% for mod in modelmain %}
+              <tr {% if mod.IDSELLER.ESHOP_INFO == "/eshop/get_info.php" %} style="background-color:#F4F4F4" {% else %} style="background-color:white"{% endif %}>
+
+                <td></td>
+                <td>{{ mod.IDDRUGNAME.DRUGNAME }}
+                  {% if mod.IDDRUGNAME.FORM == "NULL" %} {% else %} {{ mod.IDDRUGNAME.FORM }}, {% endif %}
+                  {% if mod.IDDRUGNAME.CONTAIN == "NULL"  %} {% else %} {{ mod.IDDRUGNAME.CONTAIN  }}  {% if mod.IDDRUGNAME.NUMBER == 1  %} {% else %} , {% endif %}  {% endif %}
+                  {% if  mod.IDDRUGNAME.NUMBER == "NULL" or mod.IDDRUGNAME.NUMBER == 1 %} {% else %} №{{  mod.IDDRUGNAME.NUMBER  }}{% endif %}
+                 </td>
+                <td>{{ mod.PRICE  }}</td>
+
+                <td>{{ mod.IDDRUGNAME.IDPRODUCER.PRODUCERNAME}}</td>
+                <td>{{ mod.IDDRUGNAME.IDCOUNTRY.COUNTRYNAME }}</td>
+                <td>{{ mod.IDSELLER.SELLERNAME }}</td>
+                <td>{{ mod.IDSELLER.PHONE }}</td>
+                <td>{{ mod.CDATE }}</td>
+
+            </tr>
+
+     {% endfor %}
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- tableHome -->
+
+      <!-- panel -->
+{#      <div class="w3-panel" style="height: auto; background-color:#BAC6F2;">#}
+{#        <div class="w3-row">#}
+{#          <div class="w3-third w3-container w3-center">#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#          </div>#}
+{#          <div class="w3-third w3-container w3-center">#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#          </div>#}
+{#          <div class="w3-third w3-container w3-center">#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#            <p>Hello W3.CSS Layout.</p>#}
+{#          </div>#}
+{#        </div>#}
+{#      </div>#}
+      <!-- panel -->
+
+
+      <!-- SearchIn -->
+      <div class="">
+        <input class="w3-input w3-border " style="font-size:12pt; " type="text" placeholder="Поиск.."
+          id="HomeInput" onkeyup="myFunction()">
+        <script>
+          function myFunction() {
+            var input, filter, table, tr, td, i;
+            input = document.getElementById("HomeInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("nameede");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+              td = tr[i].getElementsByTagName("td")[1];
+              if (td) {
+                txtValue = td.textContent || td.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                  tr[i].style.display = "";
+                } else {
+                  tr[i].style.display = "none";
+                }
+              }
+            }
+          }
+        </script>
+      </div>
+      <!-- SearchIn -->
+
+    </div>
+  </div>
+</body>
+
+</html>
