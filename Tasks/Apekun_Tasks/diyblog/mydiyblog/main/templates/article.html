@@ -1,0 +1,39 @@
+{% extends "untitled.html" %}
+
+{% block content %}
+<div>
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.text }}</p>
+  </div>
+{% with comments.count as total_comments %}
+    <h2>
+        {{ total_comments }} comment{{ total_comments|pluralize }}
+    </h2>
+{% endwith %}
+
+{% for comment in comments %}
+    <div class="comment">
+        <p class="info">
+        <p>Comment {{ forloop.counter }} by {{ comment.author }}</p>
+        <p>{{ comment.text }}</p>
+        </p>
+        {{ comment.body|linebreaks }}
+    </div>
+{% empty %}
+    <p>There are no comments yet.</p>
+{% endfor%}
+    {% if new_comment %}
+  <h2>Your comment has been added.</h2>
+    {% else %}
+  <h2>Add a new comment</h2>
+  <form action="." method="post">
+    {{ comment_form.as_p}}
+    {% csrf_token %}
+      {% if user.is_authenticated %}
+    <button type="submit" >Submit</button>
+      {% else %}
+       <a href="{% url "login" %}">Please log in for adding comment</a>.
+      {% endif %}
+  </form>
+{% endif %}
+{% endblock %}
