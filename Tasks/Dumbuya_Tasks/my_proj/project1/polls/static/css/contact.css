@@ -1,0 +1,14 @@
+.row .col-lg__6{
+    width: 50%;
+    margin-left: 17px;
+    margin-right: 17px
+}
+
+.input-text {
+    width: 50%!important ;
+}
+
+.btn-dento__btn {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}

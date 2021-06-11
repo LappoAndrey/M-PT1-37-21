@@ -1,0 +1,42 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block maincontent %}
+
+{% if message_name %}
+ <center>
+  <h2> Спасибо {{ message_name}}</h2>
+  <p> Ваше сообщение было успешно доставлено,хорошего дня.</p>
+ </center>
+<br/><br/>
+{% else %}
+<center>
+<p> Здесь вы можете связаться с владельцем сайта,пожалуйса заполните поля ниже что бы связаться</p>
+ </center>
+<form action="{% url 'contact'%}" method='post'>
+ {% csrf_token %}
+ <div class="row">
+  <div class="col-lg__6">
+   <input type="text" name="message-name" required
+          class="form-control input-text" placeholder="Ваше Имя">
+  </div>
+  <div class="col-lg__6">
+   <input type="text" name="message-email" required
+          class="form-control input-text" placeholder="Ваш Email">
+  </div>
+  <div class="col-lg__6">
+   <textarea type="text" name="message" required
+             class="form-control" placeholder="Ваше сообщение"></textarea>
+   <div class="col-12">
+    <button type="submit" class="btn-dento__btn">Послать Сообщение</button>
+   </div>
+  </div>
+ </div>
+
+
+
+
+
+{% endif %}
+
+
+{% endblock %}
