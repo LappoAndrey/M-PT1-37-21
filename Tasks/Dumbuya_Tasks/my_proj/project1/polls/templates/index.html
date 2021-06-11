@@ -1,0 +1,101 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block maincontent %}
+        <section class="main__section indent">
+            <div class="main__wrapper">
+                <div class="main__title">
+                    <h1>Дизайнерские светильники из дерева<br>
+                    Изготовление по индивидуальному дизайну<br>
+                    Различные варианты расцветок</h1>
+                </div>
+            </div>
+        </section>       
+         <section class="lamp-type__section">
+            <div class="lamp-type__wrapper">
+                <div class="card__wrapper">
+                {% for x in slice1%}
+                    <a href="{%url 'lamptype1' %}">
+                        <div class="card">
+                            <div class="image">
+                                <img src="{{ x.image.url }}">
+                            </div>
+                            <div class="title">
+                                <h3>{{ x.title }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                    {%endfor%}
+                </div>
+                <div class="card__wrapper">
+                {%for q in slice2%}
+                    <a href="{%url 'lamptype2' %}">
+                        <div class="card">
+                            <div class="image">
+                                <img src="{{ q.image.url }}"/>
+                            </div>
+                            <div class="title">
+                                <h3>{{ q.title }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                    {%endfor%}
+                </div>
+                <div class="card__wrapper">
+                {% for w in slice3%}
+                    <a href="{% url 'lamptype3' %}">
+                        <div class="card">
+                            <div class="image">
+                                <img src="{{ w.image.url }}"/>
+                            </div>
+                            <div class="title">
+                                <h3>{{ w.title }}</h3>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {%endfor%}
+            </div>
+        </section>
+
+                
+        </section>
+        <h2 class="h2">
+            <span> Последние Проекты</span>
+        </h2>
+        <section class="selected-lamps__section">
+            <div class="selected-lamps__wrapper">
+            {% for q in project1.reverse|slice:":2"%}
+            <div class="image-selected__lamps">
+                <a href="{% url 'project_detail' q.pk %}">
+                    <img src="{{q.image.url}}">
+                </a>
+
+            </div>
+            {%endfor%}
+            {% for e in project2.reverse|slice:":2"%}
+            <div class="image-selected__lamps">
+                <a href="{% url 'project_detail' e.pk %}">
+                <img src="{{e.image.url}}">
+                </a>
+            </div>           
+           {%endfor%}
+            {% for s in project3.reverse|slice:":2"%}
+            <div class="image-selected__lamps">
+                <a href="{% url 'project_detail' s.pk %}">
+                <img src="{{s.image.url}}">
+                </a>
+            </div>          
+            {%endfor%}
+            </div>
+        </section>
+        <section class="portfolio">
+            <div class="portfolio__wrapper">
+
+            </div>
+        </section>
+        <hr>
+        
+
+
+        
+{% endblock%}

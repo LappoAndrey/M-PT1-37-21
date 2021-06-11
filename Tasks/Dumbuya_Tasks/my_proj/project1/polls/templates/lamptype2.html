@@ -1,0 +1,18 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block maincontent %}
+
+{% for x in project2%}
+<div class="product__card">
+    <div class="image">
+        <img src="{{ x.image.url }}">
+    </div>
+    <div class="title">
+        <h3>{{ x.discription  }}
+        </h3>
+    </div>
+</div>
+{%endfor%}
+
+
+{% endblock %}
