@@ -1,0 +1,138 @@
+
+		body 
+		{ 
+
+  			margin:0;
+  			font-family: Arial, Helvetica, sans-serif;
+  			padding-top: 60px;
+  			padding-bottom: 60px;
+  			иф
+
+		}
+		.navbar
+		{
+
+             overflow: hidden;
+             background-color: #333;
+             position: fixed;
+             top: 0;
+              width: 100%;
+		}
+		
+		.navbar a
+		{
+			float:left;
+			display:block;
+			color: #f2f2f2;
+			text-align: center;
+			text-decoration: none;
+			padding: 14px 16px;
+  			font-size: 17px;
+		}
+		.navbar a:hover
+		{
+			background: #ddd ;
+			color: black;
+		} 
+		.navbar  input[type=text] {
+			width: 150px;
+			  float: right;
+			  padding: 6px;
+			  margin-top: 8px;
+			  margin-right: 16px;
+			  margin-left: 5px;
+			  margin-bottom: -10px;
+			  border: none;
+			  font-size: 13px;
+			}
+		.navbar button
+		{
+			float: right;
+			display:block;
+			text-align: center;
+			text-decoration: none;
+			margin-top: 5px;
+			padding: 4px 6px;
+  			font-size: 13px;
+		}	
+	
+		.pic 
+		{
+			display: block;
+			margin: auto;
+			padding-bottom: 60px;
+
+		}
+		.pic p{
+			font-size: 30px;
+			text-align: center;
+			text-decoration: none
+			color: #5555; ;
+
+		}
+		.navbarbottom
+		{
+			background-color: #333;
+			bottom: 0;
+			width: 100%;
+			position: fixed;
+			overflow: hidden;
+		}
+		.navbarbottom a
+		{
+			float: center;
+			display:block;
+			color: #f2f2f2;
+			text-align: center;
+			text-decoration: none;
+			padding: 14px 16px;
+  			font-size: 17px
+  					}
+		.container
+		{
+
+		  position: absolute;
+		  top: 15%;
+		  left: 35%;
+		  margin: 20px;
+		  max-width: 300px;
+		  padding: 16px;
+		  background-color: #333;;
+		  opacity: 1;
+
+		}
+
+		  input[type=text], input[type=password] {
+		  width: 90%;
+		  padding: 15px;
+		  margin: 5px 0 22px 0;
+		  border: none;
+		  background: #f1f1f1;
+		}
+
+		input[type=text]:focus, input[type=password]:focus {
+		  background-color: #ddd;
+		  outline: none;
+		}
+
+
+		.btn {
+		  background-color: #4CAF50;
+		  color: white;
+		  margin-top: 20px;
+		  padding: 16px 20px;
+		  border: none;
+		  cursor: pointer;
+		  width: 100%;
+
+		}
+
+		.btn:hover {
+		  opacity: 1;
+		}
+		.back
+		{
+			background-image: url("{% static "static/img/background.jpg" %}") ;
+			display: block;
+
+		}

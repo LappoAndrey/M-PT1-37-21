@@ -1,0 +1,44 @@
+{% load static %}
+
+<!DOCTYPE html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>Login page</title>
+<link rel="stylesheet" type="text/css" href="{% static 'css/style.css/' %}">
+
+</head>
+<body class ="back">
+		<header class = "navbar">
+		<a href="{% url 'main' %}">Home</a>
+	</header>
+
+        {% block content %}
+        {% if form.errors %}
+         <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        {% if next %}
+        {% if user.is_authenticated %}
+            <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+        {% else %}
+            <p>Please login to see this page.</p>
+        {% endif %}
+        {% endif %}
+        <form action="{% url 'login' %}" method="post" class ="container">
+             <h1>Log-in</h1>
+            {{ form.as_p }}
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}"/>
+            <button type="submit" class="btn">Submit</button>
+
+            {% endblock %}
+        </form>
+    </div>
+
+	<footer class = "navbarbottom">
+		<a href="#bottom"> Dmitry Apekun 2020</a>
+	</footer>
+
+</body>
+</html>

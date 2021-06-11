@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>Login page</title>
+		<link rel="stylesheet" type="text/css" href="{% static 'css/reg.css/' %}">
+	</title>
+</head>
+<body>
+	{% block content %}
+	<form action="." method = "post" style="border: 1px solid #ccc">
+
+		<div class = "container">
+			<h1>Registration</h1>
+			<p>Please fill in this form to create an account</p>
+			<hr>
+			{{ user_form.as_p }}
+        	{% csrf_token %}
+	    <div class="clearfix">
+	      <button type="button" class="cancelbtn">Cancel</button>
+	      <button type="submit" class="signupbtn">Sign Up</button>
+	    </div>
+	</div>
+	</form>
+	{% endblock %}
+</body>
+</html>
