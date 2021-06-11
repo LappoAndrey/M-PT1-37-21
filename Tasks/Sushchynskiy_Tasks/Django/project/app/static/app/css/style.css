@@ -1,0 +1,132 @@
+body{
+    background-color: #eee;
+    font-family: sans-serif;
+    margin: 30px;
+}
+
+.logo_text{
+    text-decoration: overline;
+}
+
+.padding_subtitle{
+    padding-left: 70px;
+}
+
+.end{
+    margin-top: 100px;
+}
+
+.text_home_page{
+    text-align: justify;
+    text-indent: 30px;
+    font-family: 'Bad Script', cursive;
+    font-size: 25px;
+    line-height: 1em;
+    white-space: pre-line;
+}
+
+.style_for_main_title{
+    text-indent: 30px;
+    text-decoration: underline;
+    font-family: 'Bad Script', cursive;
+}
+
+.style_img{
+    width: 1000px;
+    padding-left: 27px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+a:visited {
+    color: black;
+    text-decoration: none;
+}
+
+.logo{
+    width: 10%;
+}
+
+.for_text{
+    width: 382px;
+}
+
+.auth{
+    position: absolute;
+    left: 1400px;
+}
+
+.viewed{
+    color: navy;
+    font-family: monospace;
+}
+
+.logout{
+    text-decoration: none;
+    width: 104px;
+    height: 33px;
+    line-height: 33px;
+    border-radius: 36px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+}
+
+.login{
+    text-decoration: none;
+    width: 104px;
+    height: 33px;
+    line-height: 35px;
+    border-radius: 36px;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    padding: 11px;
+}
+
+.user{
+    margin-left: 31px;
+    text-decoration: overline;
+}
+
+.div_for_log{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.button_add_article{
+    text-decoration: none;
+    width: 102px;
+    height: 63px;
+    line-height: 19px;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: #524f4e;
+    background: white;
+    padding: 9px;
+    cursor: pointer;
+}
+
+.form_content{
+    width: 400px;
+}
+
+.form_title{
+    margin-left: 27px;
+    width: 398px;
+}
