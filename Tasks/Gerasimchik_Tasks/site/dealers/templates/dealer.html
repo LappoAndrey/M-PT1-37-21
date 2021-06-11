@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+    {% block script %}
+            <script src="https://api-maps.yandex.ru/2.1/?apikey=7a885765-30b1-46b1-84ba-fede6375ea64&lang=ru_RU" type="text/javascript">
+            </script>
+            <script type="text/javascript">
+        ymaps.ready(init);
+
+        function init() {
+            var myMap = new ymaps.Map("map", {
+
+                    center: [{{ object.coordinates }}],
+                //[55.8, 37.8],
+                    zoom: 15
+                }, {
+                    searchControlProvider: 'yandex#search'
+                }),
+
+            // Создаем геообъект с типом геометрии "Точка".
+                myGeoObject = new ymaps.GeoObject({
+                    // Описание геометрии.
+                    geometry: {
+                        type: "Point",
+                        coordinates: [{{ object.coordinates }}]
+                        //[55.8, 37.8]
+                    },
+                    // Свойства.
+                    properties: {
+                        // Контент метки.
+                        iconContent: '{{ object.company_name }}',
+                        //'Я тащусь',
+                        hintContent: '{{ object.address }}'
+                        //'Ну давай уже тащи'
+                    }
+                }, {
+                    // Опции.
+                    // Иконка метки будет растягиваться под размер ее содержимого.
+                    preset: 'islands#blackStretchyIcon',
+                    // Метку можно перемещать.
+                    draggable: false
+                });
+
+            myMap.geoObjects
+                .add(myGeoObject)
+        }
+
+        </script>
+    {% endblock script %}
+
+    <title>
+        {% block title %}
+        {{ object.company_name }}
+            {% endblock title %}
+    </title>
+
+
+{% block content %}
+    <div class="card">
+      <h2>{{ object.company_name }}</h2>
+        <h3>{{ object.city }}, {{ object.address }}</h3>
+        <h4>{{ object.phone }}</h4>
+        <h4><a href="{{ object.url }}">{{ object.url|safe }}</a></h4>
+        <div id="map" style="width: 100%; height: 400px"></div>
+    </div>
+{% endblock content %}
+

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for article in object_list %}
+    <div class="card">
+      <h2><a href="{% url 'article_detail' article.slug %}">{{ article.title }}</a></h2>
+      <h5>{{ article.datetime }}</h5>
+      <div class="fakeimg" style="height:200px;"><img src="../media/{{ article.image }}" style="width:100%"></div>
+      <p>{{ article.description }}</p>
+    </div>
+{% endfor %}
+{% endblock content %}
