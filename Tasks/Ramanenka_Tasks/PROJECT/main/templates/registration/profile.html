@@ -1,0 +1,11 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+    <h1>My profile:</h1>
+    Username: {{ user.username }} <br>
+    Email: {{ user.email }}<br>
+    Name: {{ user.first_name }} {{ user.last_name }}<br>
+    Status: {{ user.groups.all.0.name }} <br>
+    {% comment %} Test result: {{ user.result }}<br> {% endcomment %}
+    
+{% endblock %}

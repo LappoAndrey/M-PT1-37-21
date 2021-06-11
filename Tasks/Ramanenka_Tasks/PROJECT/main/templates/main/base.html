@@ -1,0 +1,114 @@
+{% load static %}
+<!doctype html>
+
+<html lang="en">
+<head>
+<style>
+
+body {margin:0;
+    background-color: lightblue;
+}
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #50c94b;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #50c94b;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+.navbar a:hover {
+  background: #ddd;
+  color: black;
+}
+.content {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; 
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+} 
+.name_company {
+    margin-left: auto;
+    margin-right: auto;
+    width: 10em
+}
+.news {
+    background-color: #e6c7e9;
+}
+.nnews {
+    background-color: #e6c7e9;
+}
+.photos {
+	max-width: 100px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+.photos_ {
+	max-width: 300px;
+	height: auto;
+	float: left;
+	padding: 0 10px 10px 0;
+}
+.about{
+    text-align: center;
+    
+}
+</style>
+</head>
+<body>
+    <div class="d-flex flex-column flex-md-row align-items-center pb-3 mb-4 border-bottom">
+        <h2 class="name_company">My company. Tests</h2></div>
+
+        <div class="navbar">
+        <ul>
+            
+            <a class="active" href="{% url 'news' %}">News</a>
+
+            {% if user.is_authenticated %}
+                <a style="float:right" href="{% url 'profile' %}"> <i> Hello, {{ user.get_username }}! </i> </a>
+                <a class="active" href="{% url 'home' %}">Home</a>
+                <a href="{% url 'test0' %}">Test</a>
+                <a style="float:right" href="{% url 'results' %}">Results</a>
+                {% if perms.main.add_choice %}
+                    <a href="{% url 'create' %}">Create test</a>
+                    
+                {% endif %}
+                <a style="float:right" href="{% url 'log_out' %}?next={{ request.path }}">Logout</a>
+            {% else %}
+                <a style="float:right" href="{% url 'login' %}?next={% url 'about' %}">Login</a>
+                <a style="float:right" href="{% url 'register' %}?next={% url 'about' %}">Registration</a>
+            {% endif %}
+            {% comment %} <a style="float:right" href="{% url 'profile' %}">Profile</a> {% endcomment %}
+            <a style="float:right" href="{% url 'about' %}">About</a>
+        </ul>
+        </div>
+
+    </div>
+    <hr>
+    <div class="content">
+        <div class="left"></div>
+        <div class="center">
+                {% block content %}
+                {% endblock %}
+        </div>
+        <div class="right"></div>
+    </div>
+    <hr>
+    <div class="footer">Copyright margoroma@Django</div>
+</body>
+</html>

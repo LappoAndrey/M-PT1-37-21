@@ -1,0 +1,29 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>Newspage</h1>
+    <p>We make the world better (c)</p>
+
+    <div class='news'>
+
+    {% for nnews in news %}
+
+        <h2> <a style="color:black;" align="center" href="{% url 'nnews' nnews.id %}">{{nnews.title}}</a></h2>
+            
+            {% if nnews.image %}
+                <p><img class="photos" width="200px" src="{{nnews.image.url}}"></p>
+            {% else %}
+            <p></p>
+            {% endif %}
+            <p>{{nnews.post|linebreaks|truncatewords:100}}</p>
+            <hr>
+        
+    {% endfor %}
+
+    </div>
+
+{% endblock %}
