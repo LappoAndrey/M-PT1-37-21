@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+    Blog Page
+{% endblock %}
+
+{% block content %}
+    <h1>Blog</h1>
+
+    {% if latest_articles %}
+        {% for a in latest_articles %}
+            <ul>
+                <li>
+                    <a href='{% url "detail" a.id %}'>{{a.title}}</a>
+                    {% for key, value in viewed_articles.items %}
+                        {% if a.id == key %}
+                            <span class="viewed">|viewed {{ value }} time(s)|</span>
+                        {% endif %}
+                    {% endfor %}
+                </li>
+            </ul>
+        {% endfor %}
+    {% else %}
+        <p>There is no new articles.</p>
+    {% endif %}
+
+{% endblock %}

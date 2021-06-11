@@ -1,0 +1,19 @@
+
+{% extends "untitled.html" %}
+
+{% block content %}
+<h1>
+
+</h1>
+<p> List of blogs:</p>
+ {% for post in posts %}
+    <div class="post-entry">
+      <h2><a href= "{{ post.get_absolute_url }}" > {{post.title}} </a></h2>
+
+        <p>Author:{{ post.author.first_name }}  {{ post.author.last_name }}.</p>
+         <p> Posted:{{post.creation}}</p>
+  {% empty %}
+        <p>Нет постов!</p>
+    </div>
+  {% endfor %}
+{% endblock %}

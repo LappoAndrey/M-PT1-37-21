@@ -1,0 +1,41 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1 align="center">Test from profesor</h1>
+    <p align="center">We make the world better (c)</p>
+    <h1 style="color: red">{{ notification }}</h1>
+    <form method="post">
+    {% csrf_token %}
+    {% if questions %}
+        {% for question in questions %}
+            <div class="alert alert-warning mt-2"> 
+                <h3> {{ question.question }}</h3>
+                <input type="checkbox" id="ans1" name="key1_{{ forloop.counter0 }}" value="1">
+                <label for="ans1">{{ question.ans1 }}</label><br>
+                <input type="checkbox" id="ans2" name="key2_{{ forloop.counter0 }}" value="2">
+                <label for="ans2">{{ question.ans2 }}</label><br>
+                <input type="checkbox" id="ans3" name="key3_{{ forloop.counter0 }}" value="3">
+                <label for="ans3">{{ question.ans3 }}</label><br>
+                {% comment %} <td><a href="edit/{{question.id}}">Edit</a> | <a href="delete/{{question.id}}">Delete</a></td> {% endcomment %}
+            </div><br> 
+
+        {% endfor %} 
+
+    {% else %}
+        <p>No questions</p>
+    {% endif %} 
+    <div>
+        <button type="submit">Result</button>
+    </div>
+    </form>
+
+{% endblock %}
+  
+
+
+
+

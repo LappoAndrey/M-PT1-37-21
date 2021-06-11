@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href= "{% static 'css/style.css/' %}">
+</head>
+<body class = "back">   
+	<header class = "navbar">
+		<a href="{% url 'main' %}">Home</a>
+		<a href="{% url 'index' %}"> All blogs</a>
+		<a href="{% url 'reg' %}" style="float:right">Registration</a>
+		 {% if user.is_authenticated %}
+                <p style="float:right; color:white">Welcome,{{ user.get_username }}</p>
+                {% if perms.main.add_post %}
+					<a href="{% url 'edit' %}">Edit</a>
+                    <a href="{% url 'add_post' %}">Add post</a>
+                {% endif %}
+                <a href="{% url 'logout' %}"style="float:right">Logout</a>
+            {% else %}
+                <a href="{% url 'login' %}"style="float:right">Login</a>
+            {% endif %}
+<!--?next={{ request.path }}"-->
+
+	</header>
+
+	<div class="cell">
+		{% block content %}
+			{% endblock %}
+	</div>
+    </span>
+</div>
+
+	<div class="pos">
+	</div>
+
+	<footer class = "navbarbottom">
+		<a href="#bottom"> Dmitry Apekun <span class = "currYear"> </span></a>
+	</footer>
+
+</body>
+</html>

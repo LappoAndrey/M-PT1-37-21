@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block script %}
+<style>
+    .grid-container {
+        display: grid;
+        grid-template-columns: 33% 33% 33%;
+        grid-template-rows: auto auto;
+    }
+[class^="grid-item"] {
+  border: 1px solid #fff;
+  min-height: 2.5em;
+  line-height: 2.5em;
+  text-align: center;
+  color: #fff;
+}
+.grid-item {
+
+}
+</style>
+{% endblock script %}
+
+{% block content %}
+        <div class="grid-container">
+            {% for dealer in dealers_list %}
+            <div class="grid-item">
+                <h2><a href="{{ dealer.pk }}/">{{ dealer.company_name }}</a></h2>
+            </div>
+            {% endfor %}
+        </div>
+{% endblock content %}
+

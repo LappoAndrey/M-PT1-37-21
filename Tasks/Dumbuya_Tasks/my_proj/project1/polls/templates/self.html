@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{%load static%}
+{% block maincontent %}
+        <div class="self-container">
+            {% for x in pics %}
+            <p class="lead">{{x.name}}</p>
+            <img src="{{x.image.url}}" class="image">
+            {% endfor %}
+            <hr>
+        </div>
+{% endblock%}

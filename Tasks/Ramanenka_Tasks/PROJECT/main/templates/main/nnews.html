@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+{{ title }}
+{% endblock %}
+
+{% block content %}
+    <h1>My news. All views</h1>
+    {% comment %} <p>We make the world better (c)</p> {% endcomment %}
+
+    <div class='nnews'>
+        <h2 align="center">{{ nnews.title|capfirst }}</h2>
+        {% if nnews.image %}
+            <p><img class="photos_" width="300px" src="{{nnews.image.url}}"></p>
+        {% else %}
+        <p></p>
+        {% endif %}
+        <p align="justify">{{ nnews.post|linebreaks }}</p>
+    </div>
+
+{% endblock %}

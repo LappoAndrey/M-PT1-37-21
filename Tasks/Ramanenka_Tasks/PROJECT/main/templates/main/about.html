@@ -1,0 +1,17 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}
+About
+
+{% endblock %}
+
+{% block content %}
+    <div class="about">
+    <h1>About us</h1>
+    <p>We are the champions</p>
+    <img width="400px" src="static/img/champ.jpg"/>
+    {% comment %} <img width="400px" src="{% static 'static/img/champ.jpg' %}"/> {% endcomment %}
+    <p>Contact phone +123456789</p>
+    <p>email@email.ye</p>
+    </div>
+{% endblock %}

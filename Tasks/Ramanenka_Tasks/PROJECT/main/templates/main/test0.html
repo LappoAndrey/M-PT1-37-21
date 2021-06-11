@@ -1,0 +1,99 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+{% block title %}
+Test
+{% endblock %}
+
+{% block content %}
+
+<script type="text/javascript">
+var title = 'Test extra';
+var subtitle = "Check your Python learning progress";
+var questions=[
+{
+	text: "In Python, strings are…",
+	answers: ["char arrays",
+		  "changeable",
+		  "immutable"],
+	correctAnswer: 2 // нумерация ответов с нуля!
+},
+{
+	text: "In Python, a variable may be assigned a value of one type, and then later assigned a value of a different type:",
+	answers: ["false",
+		  "true",
+		  "I don't know"],
+	correctAnswer: 1
+},
+{
+	text: "Which of the following are true of Python dictionaries:",
+	answers: ["dictionaries are mutable",
+		  "all the keys in a dictionary must be of the same type",
+		  "Items are accessed by their position in a dictionary"],
+	correctAnswer: 0
+}
+];
+
+var yourAns = new Array;
+var score = 0;
+
+function Engine(question, answer) {yourAns[question]=answer;}
+
+function Score(){
+   var answerText = "Results:\n";
+   for(var i = 0; i < yourAns.length; ++i){
+	var num = i+1;
+	answerText=answerText+"\n    Question №"+ num +"";
+	if(yourAns[i]!=questions[i].correctAnswer){
+	    answerText=answerText+"\n    Correct answer: " +
+		questions[i].answers[questions[i].correctAnswer] + "\n";
+	  }
+        else{
+	    answerText=answerText+": Correct! \n";
+	    ++score;
+	    }
+       }
+
+   answerText=answerText+"\nNumber of correct answers: "+score+"\n";
+
+   alert(answerText);
+   yourAns = [];
+   score = 0;
+   clearForm("quiz");
+}
+function clearForm(name) {
+   var f = document.forms[name];
+   for(var i = 0; i < f.elements.length; ++i) {
+	if(f.elements[i].checked)
+		f.elements[i].checked = false;
+}
+}
+</script>
+
+<style>
+span.quest {font-weight: bold;}
+</style>
+
+<h1><script>document.write(title)</script></h1>
+<h2><script>document.write(subtitle)</script></h2>
+
+<form name="quiz">
+<ol>
+<script>
+for(var q=0; q<questions.length; ++q) {
+   var question = questions[q];
+   var idx = 1 + q;
+
+   document.writeln('<li><span class="quest">' + question.text + '</span><br/>');
+   for(var i in question.answers) {
+	document.writeln('<input type=radio name="q' + idx + '" value="' + i +
+	'" onClick="Engine(' + q + ', this.value)">' + question.answers[i] + '<br/>');
+}
+}
+</script>
+</ol>
+<input type="button" onClick="Score()" value="Check results" />
+
+</form>
+
+{% endblock %} 

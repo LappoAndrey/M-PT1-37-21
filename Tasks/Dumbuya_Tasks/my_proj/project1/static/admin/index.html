@@ -1,0 +1,95 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,initial -scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{% static './css/main.css' %}">
+    </head>
+    <body>
+        <header>
+            <div class="header__wrapper indent">
+                <div class="header__title">
+                    <a href="{% url ''%}">BRillAR<br> lights </a>
+                </div>
+                <div class="header__menu">
+                    <ul>
+                        <li><a href="#">Главная</a></li>
+                        <li><a href="#">Проекты</a></li>
+                        <li><a href="#">О компании</a></li>
+                        <li><a href="#">Связаться</a></li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <section class="main__section indent">
+            <div class="main__wrapper">
+                <div class="main__title">
+                    <h1>Дизайнерские светильники из дерева<br>
+                    Изготовление по индивидуальному дизайну<br>
+                    Различные варианты расцветок</h1>
+                </div>
+            </div>
+        </section>
+        <section class="lamp-type__section">
+            <div class="lamp-type__wrapper">
+                <div class="card__wrapper">
+                    <a href="{% url' lamp1'%}">
+                        <div class="card">
+                            <div class="image">
+                                <img src="{% static './img/Lamp1.jpeg/' %}">
+                            </div>
+                            <div class="title">
+                                <p>Навесные лампы</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card__wrapper">
+                    <a href="">
+                        <div class="card">
+                            <div class="image">
+                                <img src="{% static './img/lamp3.jpeg' %}"/>
+                            </div>
+                            <div class="title">
+                                <p>Подвесные лампы</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card__wrapper">
+                    <a href="">
+                        <div class="card">
+                            <div class="image">
+                                <img src="{% static './img/Lamp2.JPEG' %}"/>
+                            </div>
+                            <div class="title">
+                                <p>Настольные лампы</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <h2 class="h2">
+            <span> Последние Проекты</span>
+        </h2>
+        <section class="selected-lamps__section">
+            <div class="selected-lamps__wrapper">
+            <div class="image-selected__lamps">
+                <img src="{% static './img/176021518_103240208526781_6426891522490466982_n.jpg' %}">
+            </div>
+
+            </div>
+        </section>
+        <section class="portfolio">
+            <div class="portfolio__wrapper">
+
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>
